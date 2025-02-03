@@ -1,0 +1,6 @@
+[wokwi]
+version = 1
+firmware = 'build/semaforos.uf2'
+elf = 'build/semaforoso.elf'
+[[uart]]
+baud = 115200
