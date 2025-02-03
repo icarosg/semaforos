@@ -11,16 +11,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
 if(WIN32)
-   set(USERHOME $ENV{USERPROFILE})
+    set(USERHOME $ENV{USERPROFILE})
 else()
-   set(USERHOME $ENV{HOME})
+    set(USERHOME $ENV{HOME})
 endif()
 set(sdkVersion 2.1.0)
 set(toolchainVersion 13_3_Rel1)
 set(picotoolVersion 2.1.0)
 set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
 if (EXISTS ${picoVscode})
-   include(${picoVscode})
+    include(${picoVscode})
 endif()
 # ====================================================================================
 set(PICO_BOARD pico_w CACHE STRING "Board type")
@@ -35,39 +35,28 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(
-    semaforos 
-    semaforos.c 
-)
+add_executable(semaforos semaforos.c )
 
 pico_set_program_name(semaforos "semaforos")
 pico_set_program_version(semaforos "0.1")
 
-
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(semaforos 0)
-pico_enable_stdio_usb(semaforos 0)
+pico_enable_stdio_uart(semaforos 1)
+pico_enable_stdio_usb(semaforos 1)
 
 # Add the standard library to the build
 target_link_libraries(semaforos
-       pico_stdlib
-       hardware_pio
-       hardware_adc
-       pico_bootrom)
+        pico_stdlib)
 
 # Add the standard include files to the build
 target_include_directories(semaforos PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}
+  ${CMAKE_CURRENT_LIST_DIR}
 )
 
-
 # Add any user requested libraries
-target_link_libraries(semaforos
-      
-       )
+target_link_libraries(semaforos 
+        
+        )
 
-# Adiciona o arquivo PIO e gera o header
-pico_generate_pio_header(semaforos ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
-
-# Gera os artefatos extras
 pico_add_extra_outputs(semaforos)
+

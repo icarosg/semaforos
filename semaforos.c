@@ -60,6 +60,7 @@ int main()
     while (true)
     {
         printf("Tempo decorrido: %d segundos\n", segundos);
+        segundos++;
         sleep_ms(1000);
     }
 }
