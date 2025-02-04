@@ -64,13 +64,15 @@ Este programa simula um **semáforo**, alternando os LEDs entre vermelho, amarel
     cd semaforos/TemporizadorDisparo   # Ou cd semaforos/TemporizadorPeriodico
     ```
 
-3. **Compile o código:**
+3. **Faça o import do projeto por meio do Raspberry Pi Pico Project (Extensão do VSCODE)
+
+4. **Compile o código:**
 
     ```bash
     gcc semaforo.c -o main
     ```
 
-4. **Execute o programa:**
+5. **Execute o programa:**
 
     ```bash
     ./main
@@ -78,5 +80,5 @@ Este programa simula um **semáforo**, alternando os LEDs entre vermelho, amarel
 
 ## **Demonstração**
 
-Assista ao vídeo demonstrativo no seguinte link: [Vídeo da solução]().
+Assista ao vídeo demonstrativo no seguinte link: [Vídeo da solução](https://www.dropbox.com/scl/fi/6eiwmkkqolcny44nv65jd/DemonstracaoTemporizadorPeriodicoTemporizadorDisparo.mkv?rlkey=7yxcub60lhnw4sazlmw9cti47&st=ncw5012q&dl=0).
 
